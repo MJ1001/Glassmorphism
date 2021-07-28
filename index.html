@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="clock()">
     <div class="container">
         <div class="card">
             <div class="content">
@@ -50,6 +50,14 @@
                 <a href="#">Learn More</a>
             </div>
         </div>
+        <div class="card">
+            <div class="content">
+                <h2>04</h2>
+                <h3>Card Four</h3>
+                <p id="time"></p>
+
+            </div>
+        </div>
     </div>
     <script src="./vanilla-tilt.js"></script>
     <script type="text/javascript">
@@ -57,8 +65,23 @@
             max: 25,
             speed: 400,
             glare: true,
-            "max-glare": 1
+            "max-glare": 0.5
         });
+        function clock() {
+            var rtClock = new Date();
+            var hours = rtClock.getHours();
+            var mins = rtClock.getMinutes();
+            var secs = rtClock.getSeconds();
+
+            var amPm = (hours < 12) ? "AM" : "PM";
+            hours = (hours > 12) ? hours - 12 : hours;
+            hours = ("0" + hours).slice(-2);
+            mins = ("0" + mins).slice(-2);
+            secs = ("0" + secs).slice(-2);
+            var time = hours + " : " + mins + " : " + secs + " : " + " " + amPm;
+            document.getElementById('time').innerHTML = time;
+            var t = setTimeout(clock, 500);
+        }
     </script>
 </body>
 

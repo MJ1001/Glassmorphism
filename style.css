@@ -96,6 +96,9 @@ body::after{
     margin-top:20px;
 
 }
+#time{
+    font-size: 2rem;
+}
 .container .card .content a{
     position: relative;
     display: inline-block;
@@ -107,4 +110,9 @@ body::after{
     text-decoration: none;
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5) ;
+    transition: 0.3s;
+}
+.container .card .content a:hover{
+background:#FF5666 ;
+color:#000;
 }
